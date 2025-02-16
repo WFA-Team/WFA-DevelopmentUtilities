@@ -1,0 +1,3 @@
+Parallely executable tasks:-
+	-> File To Plugin Mapping -> Parsing of files (each to be parsed parallely)
+	-> Warming Cache with previous data 

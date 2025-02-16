@@ -1,0 +1,4 @@
+--> Support Date as an independent type in middleware
+--> Support for Time as a data type
+--> A sophisticated parseableFile to plugin mapping system
+--> Think of memory management, on-demand creation of beans

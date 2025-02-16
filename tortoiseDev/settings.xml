@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          
+  <servers>
+    <server>
+      <id>nexus</id> 
+      <username>admin</username> 
+      <password>admin123</password> 
+    </server>
+    <server>
+    	<id>reposilite-repository</id>
+    	<username>admin</username>
+    	<password>admin</password>
+    </server>
+  </servers>  
+
+  <profiles>
+    <profile>
+      <id>nexus</id>
+	  <mirrors>
+	     <mirror>
+	       <id>nexus</id>
+	       <mirrorOf>*</mirrorOf>
+	       <url>http://localhost:8081/repository/maven-public/</url>
+	     </mirror>
+	  </mirrors>      
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <repositories>
+        <repository>
+          <id>nexus</id>
+          <name>Nexus Repository</name>
+          <url>http://localhost:8081/repository/maven-public/</url>
+          <releases>
+  		<enabled>true</enabled> 
+ 		<updatePolicy>never</updatePolicy> 
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+          </snapshots>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>nexus</id>
+          <name>Nexus Repository</name>
+          <url>http://localhost:8081/repository/maven-public/</url>
+          <releases>
+  		<enabled>true</enabled> 
+ 		<updatePolicy>never</updatePolicy> 
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+          </snapshots>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+    
+       <profile>
+      	<id>reposilite-repository</id>
+      	  <mirrors>
+	     <mirror>
+	       <id>reposilite-repository</id>
+	       <mirrorOf>*</mirrorOf>
+	       <url>http://3.7.46.30:8080/#/</url>
+	     </mirror>
+	  </mirrors>
+      	<activation>
+        	<activeByDefault>true</activeByDefault>
+      	</activation>
+      	<repositories>
+        	<repository>
+          		<id>reposilite-repository</id>
+          		<name>Reposilite Repository</name>
+          		<url>http://3.7.46.30:8080/#/</url>
+          		<releases>
+  				<enabled>true</enabled> 
+ 				<updatePolicy>never</updatePolicy> 
+          		</releases>
+          		<snapshots>
+            			<enabled>true</enabled>
+            			<updatePolicy>always</updatePolicy>
+          		</snapshots>
+        	</repository>
+      	</repositories>
+      	<pluginRepositories>
+        	<pluginRepository>
+          		<id>reposilite-repository</id>
+          		<name>Reposilite Repository</name>
+          		<url>http://3.7.46.30:8080/#/</url>
+          		<releases>
+  				<enabled>true</enabled> 
+ 				<updatePolicy>never</updatePolicy> 
+          		</releases>
+          		<snapshots>
+            			<enabled>true</enabled>
+            			<updatePolicy>always</updatePolicy>
+          		</snapshots>
+        	</pluginRepository>
+      	</pluginRepositories>
+    </profile> 
+  </profiles>
+
+  <activeProfiles>
+    <activeProfile>nexus</activeProfile>
+    <activeProfile>reposilite-repository</activeProfile>
+  </activeProfiles>
+
+</settings>
